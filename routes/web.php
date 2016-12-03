@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/* ------TEST CRÉATION D'UNE ROUTE POUR 'AFFICHER HELLO WORLD'------
+Route::get('/hello', function(){
+    return 'hello world!';
+});
+*/
+
 Route::resource('/post', 'PostController');
 
 Auth::routes();
