@@ -14,6 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        //voilà
         $list = Post::all();
         return view('posts.index',compact('list'));
     }
