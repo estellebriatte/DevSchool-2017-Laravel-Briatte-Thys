@@ -12,7 +12,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
 
-                        <a href="{{ url('post/publish') }}">+ Publier un article</a> </div>
+                        <a href="#">+ Publier un article</a> </div>
                 </div>
             </div>
         </div>

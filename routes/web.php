@@ -21,7 +21,6 @@ Route::get('/hello', function(){
 });
 */
 
-
 Route::resource('/post', 'PostController');
 
 Auth::routes();

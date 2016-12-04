@@ -24,11 +24,6 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function publish()
-    {
-        return view('posts.publish');
-    }
-
     public function create()
     {
         return view('posts.create');
