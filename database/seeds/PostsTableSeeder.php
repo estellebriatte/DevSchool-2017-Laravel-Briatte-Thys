@@ -11,6 +11,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
+        //pour 30 évènements
         factory(\App\Models\Post::class, 30)->create();
     }
 }
