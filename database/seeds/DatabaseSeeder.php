@@ -12,10 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UsersTableSeeder::class);
+        $this->call(PostsTableSeeder::class);
     }
 }
 
 
+//AJOUT DE LA CLASSE ICI CAR MA TABLE NE SE REMPLISSAIT PAS
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -29,3 +31,5 @@ class UsersTableSeeder extends Seeder
         factory(\App\Models\User::class, 20)->create();
     }
 }
+
+
