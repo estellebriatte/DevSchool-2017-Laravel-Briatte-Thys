@@ -48,8 +48,8 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ route('post.index') }}"> Liste des évènements</a></li>
-                        <li><a href="{{ route('post.create') }}"> Publier un évènement</a></li>
+                        <li><a href="{{ route('post.create') }}"> Créer un évènement</a></li>
+                        <li><a href="{{ route('post.index') }}"> Actualités</a></li>
 
 
                         <!-- Authentication Links -->
@@ -63,6 +63,14 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/home') }}">
+                                            Profil
+                                        </a>
+                                        <form id="home-form" action="{{ url('/home') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();

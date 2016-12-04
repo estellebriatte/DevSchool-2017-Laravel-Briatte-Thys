@@ -3,21 +3,36 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-offset-2 col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Liste des évènements</div>
-                    <div class="panel-body">
-                        @foreach($list as $post)
-                            <h2>
-                                <a href="{{ route('post.show', $post->id) }}">
-                                    {{ $post->title }}
-                                </a>
-                            </h2>
-
-                            <p> {{ $post->content}}</p>
-                         @endforeach
-                    </div>
+                    <div class="panel-heading">Liste des articles (et évènements) </div>
                 </div>
+            </div>
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <a href="{{ url('post/publish') }}">+ Publier un article</a> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            @foreach($list as $post)
+                                <h2>
+                                    <a href="{{ route('post.show', $post->id) }}">
+                                        {{ $post->title }}
+                                    </a>
+                                </h2>
+
+                                <p> {{ $post->content}}</p>
+                            @endforeach
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
