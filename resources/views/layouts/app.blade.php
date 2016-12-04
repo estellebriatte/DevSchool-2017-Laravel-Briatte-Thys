@@ -48,6 +48,10 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ route('post.index') }}"> Liste des évènements</a></li>
+                        <li><a href="{{ route('post.create') }}"> Publier un évènement</a></li>
+
+
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
