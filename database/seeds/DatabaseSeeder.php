@@ -32,7 +32,6 @@ class UsersTableSeeder extends Seeder
     }
 }
 
-
 class PostsTableSeeder extends Seeder
 {
     /**
