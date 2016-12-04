@@ -1,7 +1,41 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: SCHNECK_DU_93
- * Date: 04/12/2016
- * Time: 22:16
- */
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Liste des évènements) </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <a href="{{ url('post/publish') }}">+ Publier un article</a> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        @foreach($list as $post)
+                            <h2>
+                                <a href="{{ route('event.show', $post->id) }}">
+                                    {{ $post->title }}
+                                </a>
+                            </h2>
+
+                            <p> {{ $post->content}}</p>
+                        @endforeach
+
+                        {!! $list->links() !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
