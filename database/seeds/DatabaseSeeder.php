@@ -33,3 +33,15 @@ class UsersTableSeeder extends Seeder
 }
 
 
+class PostsTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        factory(\App\Models\Post::class, 30)->create();
+    }
+}
