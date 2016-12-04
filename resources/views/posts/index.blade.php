@@ -7,8 +7,6 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Liste des évènements</div>
                     <div class="panel-body">
-                        Afficher la liste
-
                         @foreach($list as $post)
                             <h2>
                                 <a href="{{ route('post.show', $post->id) }}">
