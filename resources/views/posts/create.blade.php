@@ -8,7 +8,26 @@
                     <div class="panel-heading">Création d'un article</div>
 
                     <div class="panel-body">
-                        Afficher Formulaire
+
+                        {!! Form::open(array(
+                            'route' => 'post.index',
+                            'method' => 'POST')) !!}
+
+                        {!! Form::label('title', 'Titre') !!}
+
+                        {!! Form::text('title', null,
+                       ['class' => 'form-control',
+                       'placeholder' => 'Titre']) !!}
+
+                        {!! Form::label('content', 'Contenu') !!}
+
+                        {!! Form::textarea('content', null,
+                        ['class' => 'form-control',
+                        'placeholder' => 'Contenu']) !!}
+
+                        {!! Form::submit('Publier',
+                        ['class' => 'btn btn-success']) !!}
+
                     </div>
                 </div>
             </div>
