@@ -82,7 +82,13 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findorFail($id);
+        $input = $request->input();
+        $post->fill($input)->save();
+
+        return redirect()
+            ->route('post.show', $id)
+            ->with('success', 'L\'article a bien été mis à jour');
     }
 
     /**
