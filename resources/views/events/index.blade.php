@@ -25,7 +25,7 @@
                         @foreach($events as $event)
                                 <a href="{{ route('event.show', $event->id) }}">
                                    <h2>{{ $event->title }}</h2>
-                                   <h4> Date :{{$event->start}} to {{$event->end}} at {{$event->place}}</h4>
+                                   <h4> Date : Du {{$event->start}} au {{$event->end}} à {{$event->place}}</h4>
                                     <h4>Prix:{{$event->price}}€</h4>
                                 </a>
 
