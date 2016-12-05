@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UsersTableSeeder::class);
         $this->call(PostsTableSeeder::class);
+        $this->call(EventsTableSeeder::class);
     }
 }
 
@@ -42,5 +43,18 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         factory(\App\Models\Post::class, 30)->create();
+    }
+}
+
+class EventsTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        factory(\App\Models\Event::class, 40)->create();
     }
 }
