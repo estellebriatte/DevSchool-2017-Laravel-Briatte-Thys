@@ -8,11 +8,17 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'isadmin'], ['except' => ['index', 'show']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $events = Event::orderBy('id', 'desc')->paginate(10);
@@ -38,14 +44,17 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $this->validate($request,
+        [
             'title' => 'required|min:6',
             'content' => 'required|min:10'
-        ], [
+        ],
+        [
             'title.required' => 'titre requis',
-            'title.min' => 'le titre de doit faire au moins 6 char',
+            'title.min' => 'le titre de doit faire au moins 6 caractères',
+
             'content.required' => 'contenu requis',
-            'content.min' => 'le contenu doit faire au moins 6 char'
+            'content.min' => 'le contenu doit faire au moins 10 caractères'
         ]);
 
         //enregistrer le formulaire de creation
@@ -95,6 +104,19 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,
+            [
+                'title' => 'required|min:6',
+                'content' => 'required|min:10'
+            ],
+            [
+                'title.required' => 'Titre requis',
+                'title.min' => 'Le titre doit contenir au moins 6 caractères',
+
+                'content.required' => 'Contenu requis',
+                'content.min' => 'L\'article doit contenir au moins 10 caractères'
+            ]);
+
         $event = Event::findOrFail($id);
         $input = $request->input();
         $event->fill($input)->save();
@@ -113,9 +135,11 @@ class EventController extends Controller
     public function destroy($id)
     {
         $event = Event::findOrFail($id);
+
         $event->delete();
+
         return redirect()
             ->route('event.index')
-            ->with('success', 'Evénément mis à jour');
+            ->with('success', 'L\'événément a bien été supprimé');
     }
 }
