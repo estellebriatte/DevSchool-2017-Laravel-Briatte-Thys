@@ -104,6 +104,6 @@ class PostController extends Controller
 
         return redirect()
             ->route('post.index', $id)
-            ->with('success', 'L\'article a bien été mis à jour');
+            ->with('success', 'L\'article a bien été supprimé');
     }
 }
