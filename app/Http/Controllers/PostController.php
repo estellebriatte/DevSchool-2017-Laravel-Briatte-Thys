@@ -99,6 +99,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        return redirect()
+            ->route('post.index', $id)
+            ->with('success', 'L\'article a bien été mis à jour');
     }
 }
