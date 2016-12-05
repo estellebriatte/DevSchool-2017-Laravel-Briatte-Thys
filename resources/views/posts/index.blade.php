@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-offset-2 col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Liste des articles (et évènements) </div>
+                    <div class="panel-heading">Liste des articles</div>
                 </div>
             </div>
             <div class="col-md-2">
