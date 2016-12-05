@@ -27,7 +27,6 @@ class HomeController extends Controller
     {
 
         $posts = Post::orderBy('id', 'desc')->paginate(10);
-
         return view('home', compact('posts'));
 
     }
