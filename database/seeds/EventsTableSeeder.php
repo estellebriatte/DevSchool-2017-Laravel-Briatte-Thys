@@ -11,6 +11,6 @@ class EventsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Event::class, 40)->create();
+        factory(App\Models\Event::class, 40)->create();
     }
 }
