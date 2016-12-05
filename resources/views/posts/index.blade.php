@@ -24,7 +24,7 @@
 
                             @foreach($posts as $post)
                                 <h2>
-                                    //ai-je bien utilisé le $post->all ?
+                                    <--ai-je bien utilisé le $post->all ?-->
                                     <a href="{{ route('post.show', $post->all) }}">
                                         {{ $post->title }}
                                     </a>
