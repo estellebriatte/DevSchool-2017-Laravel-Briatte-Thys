@@ -22,7 +22,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
 
-                            @foreach($list as $post)
+                            @foreach($posts as $post)
                                 <h2>
                                     <a href="{{ route('post.show', $post->id) }}">
                                         {{ $post->title }}
@@ -32,7 +32,7 @@
                                 <p> {{ $post->content}}</p>
                             @endforeach
 
-                            {!! $list->links() !!}
+                            {!! $posts->links() !!}
                         </div>
                     </div>
             </div>

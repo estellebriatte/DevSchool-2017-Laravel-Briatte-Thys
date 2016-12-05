@@ -5,10 +5,30 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Création d'un évènement</div>
+                    <div class="panel-heading">Publier des événements</div>
 
                     <div class="panel-body">
-                        Afficher Formulaire
+
+                        {!! Form::open(array(
+                            'route' => 'event.store',
+                            'method' => 'POST')) !!}
+
+                        {!! Form::label('title', 'Titre') !!}
+
+                        {!! Form::text('title', null,
+                       ['class' => 'form-control',
+                       'placeholder' => 'Titre']) !!}
+
+                        {!! Form::label('content', 'Contenu') !!}
+
+                        {!! Form::textarea('content', null,
+                        ['class' => 'form-control',
+                        'placeholder' => 'Contenu']) !!}
+
+                        {!! Form::submit('Publier',
+                        ['class' => 'btn btn-success']) !!}
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
