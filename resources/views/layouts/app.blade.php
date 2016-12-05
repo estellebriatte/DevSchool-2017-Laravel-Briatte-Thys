@@ -48,7 +48,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ route('event.create') }}"> Créer un évènement</a></li>
                         <li><a href="{{ route('post.index') }}"> Les articles</a></li>
                         <li><a href="{{ route('event.index') }}"> Les évènements</a></li>
 
