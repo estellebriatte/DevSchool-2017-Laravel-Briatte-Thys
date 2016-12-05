@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Auth;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -38,7 +39,10 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post;
+        $input = $request->input(); $input['user_id'] = Auth::user()->id;
+        $post->fill($input)->save();
+        return redirect()->route('post.index');
     }
 
     /**
