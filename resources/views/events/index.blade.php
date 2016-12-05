@@ -3,16 +3,16 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-2 col-md-6">
+            <div class="col-md-offset-2 col-md-5">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Liste des articles (et évènements) </div>
+                    <div class="panel-heading">Liste des évènements </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
 
-                        <a href="{{ route('event.create') }}">+ Publier un article</a> </div>
+                        <a href="{{ route('event.create') }}">+ Créer un évènement</a> </div>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                             <p> {{ $event->content}}</p>
                         @endforeach
 
-                        {!! $event->links() !!}
+                        {!! $events->links() !!}
                     </div>
                 </div>
             </div>

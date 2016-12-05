@@ -17,7 +17,6 @@ class PostController extends Controller
     {
         $posts = Post::orderBy('id', 'desc')->paginate(10);
 
-        //Lister les articles
         return view('posts.index', compact('posts'));
     }
 
