@@ -15,9 +15,9 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::orderBy('id', 'desc')->paginate(10);
+        $event = Event::orderBy('id', 'desc')->paginate(10);
 
-        return view('events.index', compact('events'));
+        return view('events.index', compact('event'));
     }
 
     /**
@@ -68,9 +68,9 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        $events =  Event::findOrFail($id);
+        $event =  Event::findOrFail($id);
 
-        return view('events.show', compact('events'));
+        return view('events.show', compact('event'));
     }
 
     /**
@@ -81,9 +81,9 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        $events = Event::findOrFail($id);
+        $event = Event::findOrFail($id);
 
-        return view('events.edit', compact('events'));
+        return view('events.edit', compact('event'));
     }
 
     /**
@@ -95,12 +95,12 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $events = Event::findOrFail($id);
+        $event = Event::findOrFail($id);
         $input = $request->input();
-        $events->fill($input)->save();
+        $event->fill($input)->save();
 
         return redirect()
-            ->route('post.show', $id)
+            ->route('event.index', $id)
             ->with('success', 'L\'événement a bien été mis à jour');
     }
 
@@ -116,6 +116,6 @@ class EventController extends Controller
         $event->delete();
         return redirect()
             ->route('event.index')
-            ->with('success', 'event mis à jour');
+            ->with('success', 'Evénément mis à jour');
     }
 }

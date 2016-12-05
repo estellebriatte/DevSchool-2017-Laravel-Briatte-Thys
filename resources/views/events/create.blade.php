@@ -14,21 +14,40 @@
                             'method' => 'POST')) !!}
 
                         {!! Form::label('title', 'Titre') !!}
-
                         {!! Form::text('title', null,
                        ['class' => 'form-control',
                        'placeholder' => 'Titre']) !!}
 
-                        {!! Form::label('content', 'Contenu') !!}
-
-                        {!! Form::textarea('content', null,
+                        {!! Form::label('start', 'Date de début') !!}
+                        {!! Form::text('start', null,
                         ['class' => 'form-control',
-                        'placeholder' => 'Contenu']) !!}
+                        'placeholder' => 'dd-mm-YYYY']) !!}
+
+                        {!! Form::label('end', 'Date de fin') !!}
+                        {!! Form::text('end', null,
+                        ['class' => 'form-control',
+                        'placeholder' => 'dd-mm-YYYY']) !!}
+
+                        {!! Form::label('place', 'Lieu') !!}
+                        {!! Form::text('place', null,
+                        ['class' => 'form-control',
+                        'placeholder' => 'Lieu']) !!}
+
+                        {!! Form::label('price', 'Prix') !!}
+                        {!! Form::text('price', null,
+                        ['class' => 'form-control',
+                        'placeholder' => 'Prix']) !!}
+
+                        {!! Form::label('content', 'Description') !!}
+                        {!! Form::text('content', null,
+                        ['class' => 'form-control',
+                        'placeholder' => 'Description']) !!}
 
                         {!! Form::submit('Publier',
                         ['class' => 'btn btn-success']) !!}
 
                         {!! Form::close() !!}
+
                     </div>
                 </div>
             </div>
