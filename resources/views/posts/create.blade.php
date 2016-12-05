@@ -5,12 +5,12 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Création d'un article</div>
+                    <div class="panel-heading">Publier des articles</div>
 
                     <div class="panel-body">
 
                         {!! Form::open(array(
-                            'route' => 'post.index',
+                            'route' => 'post.store',
                             'method' => 'POST')) !!}
 
                         {!! Form::label('title', 'Titre') !!}
@@ -27,6 +27,8 @@
 
                         {!! Form::submit('Publier',
                         ['class' => 'btn btn-success']) !!}
+
+                        {!! Form::close() !!}
 
                     </div>
                 </div>
