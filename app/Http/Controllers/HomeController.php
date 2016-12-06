@@ -25,8 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id', 'desc')->paginate(10);
-        $events = Event::orderBy('id', 'desc')->paginate(10);
+        $posts = Post::orderBy('id', 'desc')->paginate(2);
+        $events = Event::orderBy('id', 'desc')->paginate(2);
 
         return view('home', compact('posts', 'events'));
     }
