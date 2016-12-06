@@ -53,7 +53,7 @@
                         'placeholder' => 'Description']) !!}
 
                         {!! Form::submit('Publier',
-                        ['class' => 'btn btn-success']) !!}
+                        ['class' => 'btn btn-group-justified btn-success']) !!}
 
                         {!! Form::close() !!}
                     </div>

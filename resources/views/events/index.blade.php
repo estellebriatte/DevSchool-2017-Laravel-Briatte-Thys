@@ -30,6 +30,10 @@
                                 </a>
 
                             <p> {{ $event->content}}</p>
+
+                            <hr>
+                            <style>.hr{color: #2b542c}</style>
+
                         @endforeach
 
                         {!! $events->links() !!}

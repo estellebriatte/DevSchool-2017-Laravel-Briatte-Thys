@@ -14,7 +14,7 @@
                         <strong>Organisateur:</strong>{{ $event->user->name }}
                         <br>
 
-                        <a href="{{ route('event.edit', $event->id) }}" class="btn btn-info">Modifier</a>
+                        <a href="{{ route('event.edit', $event->id) }}" class="btn btn-group-justified btn-info">Modifier</a>
 
                         <br>
 
@@ -26,7 +26,7 @@
                        !!}
 
                         {!! Form::submit('Supprimer',
-                        ['class' => 'btn btn-danger']) !!}
+                        ['class' => 'btn btn-group-justified btn-danger']) !!}
 
                         {!! Form::close() !!}
 
