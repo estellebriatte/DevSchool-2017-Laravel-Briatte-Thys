@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-offset-1 col-md-5">
+        <div class="col-md-5">
             <div class="panel panel-default">
                 <div class="panel-heading">Liste des évènements que j'ai créés</div>
 
