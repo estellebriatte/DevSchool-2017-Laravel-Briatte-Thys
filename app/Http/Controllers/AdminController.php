@@ -11,7 +11,7 @@ class AdminController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id','desc')->paginate(10);
-        $events = Event::orderBy('id','desc'->paginate(10);
+        $events = Event::orderBy('id','desc')->paginate(10);
 
         return view('admin.index', compact('posts','events'));
     }
