@@ -48,14 +48,14 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ route('post.index') }}"> Les articles</a></li>
-                        <li><a href="{{ route('event.index') }}"> Les évènements</a></li>
+                        <li><a href="{{ route('post.index') }}"> Articles</a></li>
+                        <li><a href="{{ route('event.index') }}"> Évènements</a></li>
 
 
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
+                            <li><a href="{{ url('/login') }}">Se connecter</a></li>
+                            <li><a href="{{ url('/register') }}">S'inscrire</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

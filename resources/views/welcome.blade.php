@@ -69,7 +69,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     <a href="{{ url('/login') }}">Se connecter</a>
-                    <a href="{{ url('/register') }}">S'enregistrer</a>
+                    <a href="{{ url('/register') }}">S'inscrire</a>
                 </div>
             @endif
 
