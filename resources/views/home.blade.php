@@ -23,17 +23,17 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">Liste des évènements que j'ai créés</div>
-                    <?php /*@foreach($events as $event)
+
+                <div class="panel-body">
+                    @foreach($events as $event)
                         <h2>
-                            <a href="{{ route('post.show', $event->findOrFail(21)) }}">
+                            <a href="{{ route('event.show', $event->id) }}">
                                 {{ $event->title }}
                             </a>
                         </h2>
 
                         <p> {{ $event->content}}</p>
-                    @endforeach */?>
-
-                <div class="panel-body">
+                    @endforeach
 
                 </div>
             </div>

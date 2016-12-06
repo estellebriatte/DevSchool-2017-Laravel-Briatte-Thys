@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Event;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,9 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $posts = Post::orderBy('id', 'desc')->paginate(10);
-        return view('home', compact('posts'));
+        $events = Event::orderBy('id', 'desc')->paginate(10);
 
+        return view('home', compact('posts', 'events'));
     }
 }
+
