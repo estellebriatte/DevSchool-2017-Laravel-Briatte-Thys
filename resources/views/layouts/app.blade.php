@@ -72,10 +72,12 @@
                                         </form>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/admin') }}">
-                                            Administration
-                                        </a>
-
+                                        @if(Auth::check() && Auth::user()->isAdmin)
+                                            <a href="{{ url('/admin') }}">
+                                                Administration
+                                            </a>
+                                        @endif
+                                        
                                         <form id="admin-form" action="{{ url('/admin') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
