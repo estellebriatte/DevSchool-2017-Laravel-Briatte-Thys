@@ -30,6 +30,10 @@
                                 </h2>
 
                                 <p> {{ $post->content}}</p>
+
+                                <hr>
+                                <style>.hr{color: #2b542c}</style>
+                                
                             @endforeach
 
                             {!! $posts->links() !!}
