@@ -9,6 +9,11 @@
 
                     <div class="panel-body">
                         {{$post->content}}
+
+                        <br>
+
+                        <strong>Auteur : </strong>{{ $post->user->name }}
+
                         <br>
 
                         <a href="{{ route('post.edit', $post->id) }}" class="btn btn-info">Modifier</a>
