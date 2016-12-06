@@ -24,7 +24,11 @@
                             <td>{{ $event->content }}</td>
                             <td>{{ $event->place }}</td>
                             <td>{{ $event->user->name }}</td>
+
                         </tr>
+                        <td>
+                            <a href="{{ route('event.edit', $event->id) }}">Modif</a>
+                        </td>
                         </tbody>
                         @endforeach
                     </table>
