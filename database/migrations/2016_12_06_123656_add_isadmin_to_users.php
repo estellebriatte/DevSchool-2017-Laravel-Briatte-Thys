@@ -13,7 +13,11 @@ class AddIsadminToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function($table))
+        Schema::table('users', function($table){
+            $table->boolean('isAdmin')
+                ->after('password')
+                ->default(false);
+        });
     }
 
     /**
