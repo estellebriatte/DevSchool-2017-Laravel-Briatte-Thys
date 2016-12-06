@@ -72,6 +72,15 @@
                                         </form>
                                     </li>
                                     <li>
+                                        <a href="{{ url('/admin') }}">
+                                            Administration
+                                        </a>
+
+                                        <form id="admin-form" action="{{ url('/admin') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                    <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
