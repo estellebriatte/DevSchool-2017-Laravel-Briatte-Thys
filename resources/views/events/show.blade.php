@@ -15,7 +15,7 @@
                         <br>
                         <hr>
 
-                        @if(Auth::check() && Auth::user()->isAdmin)
+                        @if(Auth::check() && Auth::user()->isAdmin || Auth::check() && Auth::user()->id == $event['user_id'] )
                             <a href="{{ route('event.edit', $event->id) }}" class="btn btn-group-justified btn-info">Modifier</a>
 
                             <br>
