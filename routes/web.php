@@ -33,3 +33,4 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('post', 'Admin\PostController');
     Route::resource('event', 'Admin\EventController');
 });
+
