@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::orderBy('id', 'desc')->paginate(10);
+
+        return view('admin.index', compact('posts'));
     }
 
     /**
@@ -24,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -35,7 +38,29 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|min:6',
+            'content' => 'required|min:20'
+        ],
+            [
+                'title.required' => 'Titre requis',
+                'title.min' => 'Le titre doit faire au moins 6 caractères',
+                'content.required' => 'Contenu requis',
+                'content.min' => 'Le contenu doit faire au moins 20 caractères'
+
+            ]);
+
+        $post = new Post;
+        $input = $request->input();
+        $input['user_id'] = Auth::user()->id;
+
+        $post->fill($input)->save();
+
+
+
+        return redirect()
+            ->route('admin.index')
+            ->with('success', 'L\'article a bien été ajouté');
     }
 
     /**
@@ -46,7 +71,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('admin.show', compact('post'));
     }
 
     /**
@@ -57,7 +83,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        return view('admin.index', compact('post'));
     }
 
     /**
@@ -69,7 +97,23 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,
+            [
+                'title.required' => 'Titre requis',
+                'title.min' => 'Le titre doit faire au moins 6 caractères',
+                'content.required' => 'Contenu requis',
+                'content.min' => 'Le contenu doit faire au moins 20 caractères'
+
+            ]);
+
+        $post = Post::findOrFail($id);
+        $input = $request->input();
+
+        $post->fill($input)->save();
+
+        return redirect()
+            ->route('admin.show',$id)
+            ->with('success', 'L\'article a bien été mis à jour');
     }
 
     /**
@@ -80,6 +124,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        return redirect()
+            ->route('admin.index')
+            ->with('success', 'L\'article a bien été supprimé');
     }
 }
