@@ -37,5 +37,10 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-offset-8 col-md-3">
+                <a href="{{ route('post.index') }}">Retour à la liste des articles</a>
+            </div>
+        </div>
     </div>
 @endsection

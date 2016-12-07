@@ -46,5 +46,10 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-offset-8 col-md-3">
+                <a href="{{ route('event.index') }}">Retour à la liste des évènements</a>
+            </div>
+        </div>
     </div>
 @endsection
