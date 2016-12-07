@@ -37,5 +37,10 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-offset-8 col-md-3">
+                <a href="#">Retour</a>
+            </div>
+        </div>
     </div>
 @endsection
