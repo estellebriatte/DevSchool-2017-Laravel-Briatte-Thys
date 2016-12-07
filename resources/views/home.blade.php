@@ -7,18 +7,23 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Liste des articles que j'ai publiés</div>
 
-                <div class="panel-body">
-                    @foreach($posts as $post)
-                        <h2>
-                            <a href="{{ route('post.show', $post->id) }}">
-                                {{ $post->title }}
-                            </a>
-                        </h2>
+                    <div class="panel-body">
 
-                        <p> {{ $post->content}}</p>
-                    @endforeach
 
-                    <div class="text-center">{{ $events->links() }}</div>
+                            @foreach($posts as $post)
+                                @if(Auth::user()->id == $post['user_id'])
+                                    <h2>
+                                        <a href="{{ route('post.show', $post->id) }}">
+                                            {{ $post->title }}
+                                        </a>
+                                    </h2>
+                                    <p> {{ $post->content }}</p>
+                                @endif
+                            @endforeach
+
+
+
+                    <div class="text-center">{{ $posts->links() }}</div>
                 </div>
             </div>
         </div>
@@ -41,7 +46,7 @@
 
                     @endforeach
 
-                    <div class="text-center">{{ $posts->links() }}</div>
+                    <div class="text-center">{{ $events->links() }}</div>
 
                 </div>
             </div>
