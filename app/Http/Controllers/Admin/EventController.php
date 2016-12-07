@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Event;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -58,65 +59,66 @@ class EventController extends Controller
             ->route('admin.index')
             ->with('success', 'Evénement publié');
     }
+}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $event = Event::findOrFail($id);
+/**
+ * Display the specified resource.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+public function show($id)
+{
+    $event = Event::findOrFail($id);
 
-        return view('admin.show', compact('event'));
-    }
+    return view('admin.show', compact('event'));
+}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $event = Event::findOrFail($id);
+/**
+ * Show the form for editing the specified resource.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+public function edit($id)
+{
+    $event = Event::findOrFail($id);
 
-        return view('admin.edit', compact('event'));
-    }
+    return view('admin.edit', compact('event'));
+}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $event = Event::findOrFail($id);
-        $input = $request->input();
+/**
+ * Update the specified resource in storage.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+public function update(Request $request, $id)
+{
+    $event = Event::findOrFail($id);
+    $input = $request->input();
 
-        $event->fill($input)->save();
+    $event->fill($input)->save();
 
 
-        return redirect()
-            ->route('admin.index')
-            ->with('success', 'Evénement mis à jour');
-    }
+    return redirect()
+        ->route('admin.index')
+        ->with('success', 'Evénement mis à jour');
+}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $event = Event::findOrFail($id);
-        $event->delete();
-        return redirect()
-            ->route('admin.index')
-            ->with('success', 'Evénement mis à jour');
-    }
+/**
+ * Remove the specified resource from storage.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+public function destroy($id)
+{
+    $event = Event::findOrFail($id);
+    $event->delete();
+    return redirect()
+        ->route('admin.index')
+        ->with('success', 'Evénement mis à jour');
+}
 }
