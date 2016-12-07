@@ -34,6 +34,26 @@
                             {!! Form::close() !!}
                         @endif
 
+                        @if(Auth::id() == $post->user_id())
+                            <a href="{{ route('post.edit', $post->id) }}" class="btn btn-group-justified btn-info">Modifier</a>
+
+                            <br>
+
+                            {!! Form::model(
+                           $post,
+                           array(
+                           'route' => array('post.destroy', $post->id),
+                           'method' => 'DELETE'))
+                           !!}
+
+                            {!! Form::submit('Supprimer',
+                            ['class' => 'btn btn-group-justified btn-danger']) !!}
+
+                            {!! Form::close() !!}
+                        @endif
+
+
+
                     </div>
                 </div>
             </div>
