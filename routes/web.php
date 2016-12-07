@@ -21,9 +21,9 @@ Route::get('/hello', function(){
 });
 */
 
-route::resource('/post', 'PostController');
-route::resource('/event', 'EventController');
-route::resource('/admin', 'AdminController');
+Route::resource('/post', 'PostController');
+Route::resource('/event', 'EventController');
+Route::resource('/admin', 'AdminController');
 
 Auth::routes();
 
