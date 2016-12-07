@@ -78,7 +78,7 @@
                                             </a>
                                         @endif
 
-                                        <form id="admin-form" action="{{ url('/admin') }}" method="POST" style="display: none;">
+                                        <form id="admin-form" action="{{ route('admin.index') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>

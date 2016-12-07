@@ -23,7 +23,7 @@
                     <div class="panel-body">
 
                         @foreach($events as $event)
-                            <a href="{{ route('admin.event.show', $event->id) }}">
+                            <a href="{{ route('event.show'), $event->id) }}">
                                 <h2>{{ $event->title }}</h2>
                                 <h4> Date : Du {{$event->start}} au {{$event->end}} à {{$event->place}}</h4>
                                 <h4>Prix:{{$event->price}}€</h4>

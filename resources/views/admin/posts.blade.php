@@ -12,7 +12,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
 
-                        <a href="{{ route('post.create') }}">+ Publier un article</a> </div>
+
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
 
                         @foreach($posts as $post)
                             <h2>
-                                <a href="{{ route('admin.post.show', $post->id) }}">
+                                <a href="{{ route('post.show', $post->id) }}">
                                     {{ $post->title }}
                                 </a>
                             </h2>

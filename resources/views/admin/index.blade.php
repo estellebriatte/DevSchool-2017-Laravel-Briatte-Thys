@@ -23,7 +23,7 @@
                         @foreach($events as $event)
                             <tbody>
                             <tr>
-                                <td> <a href="{{ url('/admin/event') }}"> {{ $event->title }}</a> </td>
+                                <td> <a href="{{ route('event.show', $event->id) }}"> {{ $event->title }}</a> </td>
                                 <td>{{ $event->content }}</td>
                                 <td>{{ $event->place }}</td>
                                 <td>{{ $event->user->name }}</td>
@@ -78,7 +78,7 @@
                         @foreach($posts as $post)
                             <tbody>
                             <tr>
-                                <td> <a href="{{ route('admin.index') }}"> {{ $post->title }}</a> </td>
+                                <td> <a href="{{ route('post.show', $post->id) }}"> {{ $post->title }}</a> </td>
                                 <td>{{ $post->content }}</td>
                                 <td>{{ $post->user->name }}</td>
 
