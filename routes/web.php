@@ -23,7 +23,6 @@ Route::get('/hello', function(){
 
 Route::resource('/post', 'PostController');
 Route::resource('/event', 'EventController');
-Route::resource('/admin', 'AdminController');
 
 Auth::routes();
 
