@@ -39,7 +39,7 @@
         </div>
         <div class="row">
             <div class="col-md-offset-8 col-md-3">
-                <a href="#">Retour</a>
+                <a href="{{ route('post.index') }}">Retour</a>
             </div>
         </div>
     </div>
