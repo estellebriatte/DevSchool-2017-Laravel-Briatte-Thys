@@ -30,7 +30,6 @@
                             ['class' => 'btn btn-group-justified btn-danger']) !!}
 
                             {!! Form::close() !!}
-                        @endif
 
                     </div>
                 </div>
