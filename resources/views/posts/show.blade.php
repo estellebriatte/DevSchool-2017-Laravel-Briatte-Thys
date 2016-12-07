@@ -11,12 +11,13 @@
                         {{$post->content}}
 
                         <br>
-
-                        <strong>Auteur : </strong>{{ $post->user->name }}
-
                         <br>
+                        <strong>Auteur : </strong>{{ $post->user->name }}
+                        <br>
+                        <hr>
 
-                        <a href="{{ route('post.edit', $post->id) }}" class="btn btn-info">Modifier</a>
+
+                        <a href="{{ route('post.edit', $post->id) }}" class="btn btn-group-justified btn-info">Modifier</a>
 
                         <br>
 
@@ -28,7 +29,7 @@
                        !!}
 
                         {!! Form::submit('Supprimer',
-                        ['class' => 'btn btn-danger']) !!}
+                        ['class' => 'btn btn-group-justified btn-danger']) !!}
 
                         {!! Form::close() !!}
 

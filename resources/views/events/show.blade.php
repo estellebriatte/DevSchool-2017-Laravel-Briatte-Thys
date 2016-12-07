@@ -13,6 +13,7 @@
                         <br>
                         <strong>Organisateur:</strong>{{ $event->user->name }}
                         <br>
+                        <hr>
 
                         <a href="{{ route('event.edit', $event->id) }}" class="btn btn-group-justified btn-info">Modifier</a>
 
