@@ -11,6 +11,15 @@
 
                         <br>
                         <br>
+                        Du {{$event->start}} au {{$event->end}} à {{$event->place}}
+
+                        <br>
+                        <br>
+                        Prix: {{$event->price}}
+
+
+                        <br>
+                        <br>
                         <strong>Organisateur:</strong>{{ $event->user->name }}
                         <br>
                         <hr>

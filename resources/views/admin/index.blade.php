@@ -78,7 +78,7 @@
                         @foreach($posts as $post)
                             <tbody>
                             <tr>
-                                <td> <a href="{{ route('admin.post.index') }}"> {{ $post->title }}</a> </td>
+                                <td> <a href="{{ route('admin.index') }}"> {{ $post->title }}</a> </td>
                                 <td>{{ $post->content }}</td>
                                 <td>{{ $post->user->name }}</td>
 

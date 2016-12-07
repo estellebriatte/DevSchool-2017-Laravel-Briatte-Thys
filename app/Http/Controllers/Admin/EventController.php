@@ -59,7 +59,6 @@ class EventController extends Controller
             ->route('admin.index')
             ->with('success', 'Evénement publié');
     }
-}
 
 /**
  * Display the specified resource.
