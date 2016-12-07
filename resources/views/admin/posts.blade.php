@@ -24,7 +24,7 @@
 
                         @foreach($posts as $post)
                             <h2>
-                                <a href="{{ route('post.show', $post->id) }}">
+                                <a href="{{ route('show.post', $post->id) }}">
                                     {{ $post->title }}
                                 </a>
                             </h2>

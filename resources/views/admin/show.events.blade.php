@@ -3,39 +3,44 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-2 col-md-5">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Liste des évènements </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-
-                        <a href="{{ route('event.create') }}">+ Créer un évènement</a> </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
+                    <div class="panel-heading">{{ $event->title }}</div>
                     <div class="panel-body">
+                        {{$event->content}}
 
-                        @foreach($events as $event)
-                                {{ $event->id) }}
-                                <h2>{{ $event->title }}</h2>
-                                <h4> Date : Du {{$event->start}} au {{$event->end}} à {{$event->place}}</h4>
-                                <h4>Prix:{{$event->price}}€</h4>
+                        <br>
+                        <br>
+                        Du {{$event->start}} au {{$event->end}} à {{$event->place}}
 
-                            <p> {{ $event->content}}</p>
+                        <br>
+                        <br>
+                        Prix: {{$event->price}}€
 
-                            <hr>
-                            <style>.hr{color: #2b542c}</style>
 
-                        @endforeach
+                        <br>
+                        <br>
+                        <strong>Organisateur:</strong>{{ $event->user->name }}
+                        <br>
+                        <hr>
 
-                        {!! $events->links() !!}
+                            <a href="{{ route('event.edit', $event->id) }}" class="btn btn-group-justified btn-info">Modifier</a>
+
+                            <br>
+
+                            {!! Form::model(
+                           $event,
+                           array(
+                           'route' => array('event.destroy', $event->id),
+                           'method' => 'DELETE'))
+                           !!}
+
+                            {!! Form::submit('Supprimer',
+                            ['class' => 'btn btn-group-justified btn-danger']) !!}
+
+                            {!! Form::close() !!}
+                        @endif
+
                     </div>
                 </div>
             </div>
