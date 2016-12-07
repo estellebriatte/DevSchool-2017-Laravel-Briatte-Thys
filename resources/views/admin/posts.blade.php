@@ -24,7 +24,7 @@
 
                         @foreach($posts as $post)
                             <h2>
-                                <a href="{{ route('show.post', $post->id) }}">
+                                <a href="{{ route('admin.post.show', $post->id) }}">
                                     {{ $post->title }}
                                 </a>
                             </h2>

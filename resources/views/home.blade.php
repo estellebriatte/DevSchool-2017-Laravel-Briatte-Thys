@@ -33,17 +33,20 @@
 
                 <div class="panel-body">
                     @foreach($events as $event)
-                        <a href="{{ route('event.show', $event->id) }}">
-                            <h2>{{ $event->title }}</h2>
+                        @if(Auth::user()->id == $event['user_id'])
+                            <h2>
+                                <a href="{{ route('event.show', $event->id) }}">
+                                    {{ $event->title }}
+                            </h2>
                             <h4> Date : Du {{$event->start}} au {{$event->end}} à {{$event->place}}</h4>
                             <h4>Prix:{{$event->price}}€</h4>
-                        </a>
+                                </a>
 
-                        <p> {{ $event->content}}</p>
+                                <p> {{ $event->content}}</p>
 
-                        <hr>
-                        <style>.hr{color: #2b542c}</style>
-
+                                <hr>
+                                <style>.hr{color: #2b542c}</style>
+                        @endif
                     @endforeach
 
                     <div class="text-center">{{ $events->links() }}</div>

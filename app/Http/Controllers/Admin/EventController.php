@@ -18,7 +18,7 @@ class EventController extends Controller
     {
         $events = Event::orderBy('id', 'desc')->paginate(10);
 
-        return view('admin.index', compact('events'));
+        return view('admin.show', compact('events'));
     }
 
     /**
