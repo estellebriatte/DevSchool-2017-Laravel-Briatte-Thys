@@ -29,7 +29,25 @@
 
                             </tr>
                             <td>
-                                <a href="{{ route('event.edit', $event->id) }}">Modif</a>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="{{ route('event.edit', $event->id) }}" class="btn btn-info">Modifier</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        {!! Form::model(
+                                           $event, array(
+                                           'route' => array('event.destroy', $event->id),
+                                           'method' => 'DELETE'))
+                                           !!}
+
+                                        {!! Form::submit('Supprimer',
+                                        ['class' => 'btn btn-danger']) !!}
+
+                                        {!! Form::close() !!}
+                                    </div>
+                                </div>
+
                             </td>
                             </tbody>
                             @endforeach
@@ -65,7 +83,27 @@
 
                                 </tr>
                                 <td>
-                                    <a href="{{ route('post.edit', $post->id) }}">Modif</a>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a href="{{ route('post.edit', $post->id) }}" class="btn btn-info">Modifier</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            {!! Form::model(
+                                               $post, array(
+                                               'route' => array('post.destroy', $post->id),
+                                               'method' => 'DELETE'))
+                                               !!}
+
+                                            {!! Form::submit('Supprimer',
+                                            ['class' => 'btn btn-danger']) !!}
+
+                                            {!! Form::close() !!}
+                                        </div>
+                                    </div>
+
+
+
                                 </td>
                                 </tbody>
                             @endforeach
