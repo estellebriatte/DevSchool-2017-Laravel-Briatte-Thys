@@ -12,6 +12,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
 
+                        <a href="{{ route('post.create') }}">+ Publier un article</a> </div>
 
                     </div>
                 </div>
