@@ -15,21 +15,23 @@
                         <br>
                         <hr>
 
-                        <a href="{{ route('event.edit', $event->id) }}" class="btn btn-group-justified btn-info">Modifier</a>
+                        @if(Auth::check() && Auth::user()->isAdmin)
+                            <a href="{{ route('event.edit', $event->id) }}" class="btn btn-group-justified btn-info">Modifier</a>
 
-                        <br>
+                            <br>
 
-                        {!! Form::model(
-                       $event,
-                       array(
-                       'route' => array('event.destroy', $event->id),
-                       'method' => 'DELETE'))
-                       !!}
+                            {!! Form::model(
+                           $event,
+                           array(
+                           'route' => array('event.destroy', $event->id),
+                           'method' => 'DELETE'))
+                           !!}
 
-                        {!! Form::submit('Supprimer',
-                        ['class' => 'btn btn-group-justified btn-danger']) !!}
+                            {!! Form::submit('Supprimer',
+                            ['class' => 'btn btn-group-justified btn-danger']) !!}
 
-                        {!! Form::close() !!}
+                            {!! Form::close() !!}
+                        @endif
 
                     </div>
                 </div>

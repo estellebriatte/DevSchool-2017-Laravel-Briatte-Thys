@@ -16,22 +16,23 @@
                         <br>
                         <hr>
 
+                        @if(Auth::check() && Auth::user()->isAdmin)
+                            <a href="{{ route('post.edit', $post->id) }}" class="btn btn-group-justified btn-info">Modifier</a>
 
-                        <a href="{{ route('post.edit', $post->id) }}" class="btn btn-group-justified btn-info">Modifier</a>
+                            <br>
 
-                        <br>
+                            {!! Form::model(
+                           $post,
+                           array(
+                           'route' => array('post.destroy', $post->id),
+                           'method' => 'DELETE'))
+                           !!}
 
-                        {!! Form::model(
-                       $post,
-                       array(
-                       'route' => array('post.destroy', $post->id),
-                       'method' => 'DELETE'))
-                       !!}
+                            {!! Form::submit('Supprimer',
+                            ['class' => 'btn btn-group-justified btn-danger']) !!}
 
-                        {!! Form::submit('Supprimer',
-                        ['class' => 'btn btn-group-justified btn-danger']) !!}
-
-                        {!! Form::close() !!}
+                            {!! Form::close() !!}
+                        @endif
 
                     </div>
                 </div>
