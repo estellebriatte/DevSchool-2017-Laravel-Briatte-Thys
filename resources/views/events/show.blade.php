@@ -15,7 +15,7 @@
 
                         <br>
                         <br>
-                        Prix: {{$event->price}}
+                        Prix: {{$event->price}}€
 
 
                         <br>
