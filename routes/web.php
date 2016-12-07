@@ -27,4 +27,8 @@ Route::resource('/event', 'EventController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/admin', 'AdminController@index');
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::resource('/', 'AdminController');
+    Route::resource('post', 'Admin\PostController');
+    Route::resource('event', 'Admin\EventController');
+});
